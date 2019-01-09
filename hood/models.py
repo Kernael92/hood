@@ -15,3 +15,10 @@ class Profile(models.Model):
     phone_number = models.CharField(max_length=10, blank=True)
     hood = models.ForeignKey(Hood, on_delete=models.CASCADE)
 
+
+class Business(models.Model):
+    User = models.ForeignKey(User, on_delete=models.CASCADE)
+    hood = models.ForeignKey(Hood, on_delete=models.CASCADE)
+    email = models.EmailField()
+    phone_number = models.CharField(max_length=10,blank=True)
+
