@@ -7,10 +7,17 @@ class Hood(models.Model):
     name = models.CharField(max_length=180)
     location = models.CharField(max_length=180)
     occupants_count = models.IntegerField()
+    
+    def __str__self():
+        return self.name
+
+    def save_hood(self):
+        self.save()
+
 
 class Profile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    profile_pi = models.ImageField(upload_to = 'profile_pic/')
+    profile_pic = models.ImageField(upload_to = 'profile_pic/')
     email = models.EmailField()
     phone_number = models.CharField(max_length=10, blank=True)
     hood = models.ForeignKey(Hood, on_delete=models.CASCADE)
