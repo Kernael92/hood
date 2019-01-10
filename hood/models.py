@@ -23,7 +23,9 @@ class Hood(models.Model):
     def update_hood(self,id):
         hood = Hood.objects.filter(hood_id = id).update
         return hood
-    
+    def update_occupant(self,occupants_count):
+        occupant_count = Hood.objects.filter().update
+        return occupant_count
 
 
 
