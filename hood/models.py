@@ -45,7 +45,7 @@ class Profile(models.Model):
 
 
 class Business(models.Model):
-    User = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     hood = models.ForeignKey(Hood, on_delete=models.CASCADE)
     email = models.EmailField()
     phone_number = models.CharField(max_length=10,blank=True)
@@ -62,6 +62,16 @@ class Business(models.Model):
     def update_business(self,id):
         business = Business.objects.filter(business_id = id).update()
         return business
+
+
+class Post(models.Model):
+    title = models.CharField(max_length = 256)
+    description = models.TextField()
+    pub_date = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField(upload_to='image',blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    hood = models.ForeignKey(Hood, on_delete=models.CASCADE)
+
 
 
     
