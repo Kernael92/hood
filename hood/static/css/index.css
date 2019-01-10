@@ -100,7 +100,7 @@ section .section-title {
 }
 
 .signup {
-    font-size: 60px;
+    font-size: 50px;
     font-family: cursive; 
     font-weight: bold;
     text-align: center;
@@ -116,7 +116,7 @@ section .section-title {
 }
 
 .login {
-    font-size: 60px;
+    font-size: 50px;
     font-family: cursive; 
     font-weight: bold;
     text-align: center;
@@ -127,7 +127,7 @@ section .section-title {
 	color:#eeeeee;
     
 }
-h2.hoover {
+p.hoover {
     color: #9BD770;
     outline: none;
     cursor: pointer;
@@ -144,9 +144,24 @@ h2.hoover {
     width: 100vw;
     height: 80vh;
     
-    
-
-    
 }
+h1 {
+    font-size: 80px;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 4s;
+    -webkit-animation-name: example;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    position: relative;
+    
 
+}
+@keyframes example {
+    0%   { left:0px; top:0px;}
+    25%  { left:200px; top:0px;}
+    50%  { left:200px; top:200px;}
+    75%  { left:0px; top:200px;}
+    100% { left:0px; top:0px;}
+}
 
