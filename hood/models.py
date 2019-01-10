@@ -13,6 +13,19 @@ class Hood(models.Model):
 
     def save_hood(self):
         self.save()
+    
+    def create_hood(self):
+        self.create()
+
+    def delete_hood(self):
+        self.delete()
+
+    def update_hood(self,id):
+        hood = Hood.objects.filter(hood_id = id).update
+        return hood
+    
+
+
 
 
 class Profile(models.Model):
