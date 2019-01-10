@@ -37,6 +37,12 @@ class Profile(models.Model):
     phone_number = models.CharField(max_length=10, blank=True)
     hood = models.ForeignKey(Hood, on_delete=models.CASCADE)
 
+    def save_profile(self):
+        self.save()
+
+    def delet_profile(self):
+        self.delete()
+
 
 class Business(models.Model):
     User = models.ForeignKey(User, on_delete=models.CASCADE)
