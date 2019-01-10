@@ -8,7 +8,7 @@ class Hood(models.Model):
     location = models.CharField(max_length=180)
     occupants_count = models.IntegerField()
     
-    def __str__self():
+    def __str__(self):
         return self.name
 
     def save_hood(self):
@@ -43,4 +43,12 @@ class Business(models.Model):
     hood = models.ForeignKey(Hood, on_delete=models.CASCADE)
     email = models.EmailField()
     phone_number = models.CharField(max_length=10,blank=True)
+
+    def __str__(self):
+        return self.email
+
+    def save_business(self):
+        self.save()
+
+    
 
