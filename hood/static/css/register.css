@@ -1,0 +1,25 @@
+body {
+    background-image: url('../images/hos.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh; 
+}
+
+form {
+    font-size: 20px;
+    font-family: cursive;
+    font-weight: bolder;
+}
+h3 {
+    font-size: 30px;
+    font-family: cursive;
+    font-weight: bolder;
+}
+input {
+    font-size: 30px;
+    font-family: cursive;
+    font-weight: bolder;
+}

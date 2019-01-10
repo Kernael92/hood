@@ -23,12 +23,65 @@
     <body>
         
         {%block content%}
-         
+        <section id="header">
+            <div class="container">
+                <div class="row">
+                    <div class="header">
+                        <h1>NEIGHBORHOOD</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="signup">
+                        <h2><a href="/accounts/register">SIGNUP</a></h2>
+                    </div>
+                    <div class="login">
+                        <h2><a href="/accounts/login">LOGIN</a></h2>
+    
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container">
+            <div class="row">
+                <div class="header">
+                    <h1>NEIGHBORHOOD</h1>
+                </div>
+                <div class="signup">
+                    <h2><a href="/accounts/register">SIGNUP</a></h2>
+                </div>
+                <div class="login">
+                    <h2><a href="/accounts/login">LOGIN</a></h2>
+
+                </div>
+            </div>
+        </div>
+        <section id='footer'>
+            <div class="container">
+                <div class="row">
+                    <div class="row text-center text-xs-center text-sm-left text-md-left">
+                        <h5>Quick links</h5>
+                        <ul class="list-unstyled quick-links">
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
+                        </ul>
+    
+                    </div>
+    
+                </div>
+    
+            </div>
+            <div class="row">
+                <p class='h6'>&copy All rights Reversed. <a class='text-green ml-2' href="">Kernel</a></p>
+
+            </div>
+        </section>
+        
         {%endblock%}
 
         {% block scripts%}
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-            <link rel="stylesheet" href="{%static 'js/index.js'%}">
             {% bootstrap_javascript%}
         {% endblock%}
 
