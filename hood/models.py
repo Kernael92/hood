@@ -72,6 +72,15 @@ class Post(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     hood = models.ForeignKey(Hood, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.title
+
+    def save_post(self):
+        self.save()
+
+    def delete_post(self):
+        self.delete()
+
 
 
     
