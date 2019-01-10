@@ -24,7 +24,7 @@ class Hood(models.Model):
         hood = Hood.objects.filter(hood_id = id).update
         return hood
     def update_occupant(self,occupants_count):
-        occupant_count = Hood.objects.filter().update
+        occupant_count = Hood.objects.filter().update()
         return occupant_count
 
 
@@ -49,6 +49,14 @@ class Business(models.Model):
 
     def save_business(self):
         self.save()
+
+    def delete_business():
+        self.delete()
+
+    def update_business(self,id):
+        business = Business.objects.filter(business_id = id).update()
+        return business
+
 
     
 
