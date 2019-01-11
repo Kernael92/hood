@@ -27,6 +27,19 @@ def new_post(request):
         form = NewPostForm()
     return render(request, 'new_post.html', {'form': form})
 
+def profile(request,username):
+    user = User.objects.get(username=username)
+    if not user:
+        return redirect('index')
+    profile = Profile.objects.get(user=user)
+    context = {
+        'username':username,
+        'user': user,
+        'profile': profile,
+    }
+
+    return render(request, 'hood/profile.html', context)
+
 
 
 

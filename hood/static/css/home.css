@@ -61,7 +61,7 @@
 }
 
 /* Responsive columns */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
     .column {
       width: 100%;
       display: block;
@@ -159,6 +159,31 @@
     color: blue;
     text-decoration: none;
     cursor: pointer;
+}
+@media screen and (max-width: 1000px) {
+    .carousel-inner {
+      
+        width: 100vw;
+        height: 60vh;
+        
+    }
+h1 {
+    font-size: 40px;
+    font-family: cursive;
+    font-weight: bolder;
+    color: #79BEA8;
+}
+p {
+    font-size: 35px;
+    font-family: cursive;
+    font-weight: bolder;
+    color:#79BEA8;
+}
+h1 {
+    font-size: 40px;
+    font-family: cursive;
+    font-weight: bolder;
+    color: #79BEA8;
 }
 
 
