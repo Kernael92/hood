@@ -6,5 +6,9 @@ from django.contrib.auth.models import User
 def index(request):
     return render(request,'index.html')
 
+def home(request):
+    posts = Post.objects.all()
+    return render(request,'hood/home.html',{'posts':posts})
+
 
 

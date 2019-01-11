@@ -68,7 +68,7 @@ class Post(models.Model):
     title = models.CharField(max_length = 256)
     description = models.TextField()
     pub_date = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(upload_to='image',blank=True)
+    image = models.ImageField(upload_to='image')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     hood = models.ForeignKey(Hood, on_delete=models.CASCADE)
 

@@ -1,0 +1,44 @@
+{%extends "hood/base.html"%}
+{% load bootstrap3 %}
+{% block content %}
+{{block.super}}
+<section>
+    <div class="container">
+        {%for post in posts%}
+        <div class="row">
+            <div class="myslides">
+                <a href=""><img src="{{post.image_url}}" alt="" style="width:100%"></a>
+                
+
+            </div>
+
+    
+        </div>
+    </div>
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <div class="card border-secondary">
+                        <img class="card-img-top" id="myImg"  src="{{post.image.url}}" class="img-responsive" alt="" style='width:100%;'  data-toggle="modal" data-target="#myModal{{post.id}}"  >
+
+                    </div>
+
+                    <!-- <h1>{{post.title}}</h1>
+                    
+                    <p>{{post.description}}</p>
+                    <p>Posted {{post.pub_date|timesince}} at Location: {{post.hood.location}} </p> -->
+
+                </div>
+
+            </div>
+
+        {%endfor%}
+        </div>
+
+    
+</section>
+
+
+
+{% endblock %}
+

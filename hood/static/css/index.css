@@ -147,12 +147,12 @@ p.hoover {
 }
 h1 {
     font-size: 80px;
-    -webkit-animation-iteration-count: infinite;
+    /* -webkit-animation-iteration-count: infinite; */
     -webkit-animation-duration: 4s;
     -webkit-animation-name: example;
     animation-name: example;
     animation-duration: 4s;
-    animation-iteration-count: infinite;
+    /* animation-iteration-count: infinite; */
     position: relative;
     
 
@@ -164,4 +164,42 @@ h1 {
     75%  { left:0px; top:200px;}
     100% { left:0px; top:0px;}
 }
+ /* * {
+    box-sizing: border-box;
+}
+
+.container {
+padding: 64px;
+} */
+
+/* Clear floats */
+/* .row:after {
+    content: "";
+    display: table;
+    clear: both
+} */
+
+/* 2/3 column */
+/* .column-66 {
+    float: left;
+    width: 66.66666%;
+    padding: 20px;
+} */
+
+/* 1/3 column */
+/* .column-33 {
+    float: left;
+    width: 33.33333%;
+    padding: 20px;
+} */
+
+/* Add responsiveness - make the columns appear on top of each other instead of next to each other on small screens */
+/* @media screen and (max-width: 1000px) {
+    .column-66,
+    .column-33 {
+        width: 100%;
+        text-align: center;
+    }
+} */
+
 
