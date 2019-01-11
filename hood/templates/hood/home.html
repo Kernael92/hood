@@ -14,7 +14,7 @@
                 </ol>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img class="image" src="../static/images/hoood.jpg" class="d-block w-100" alt="...">
+                    <img class="image" src="../static/images/mot.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                             <h5>Neighborhood</h5>
                             <p>An Application to enable users to be in the loop about everything  happening in their neighborhood</p>
@@ -68,7 +68,7 @@
                                             <p>Posted {{post.pub_date|timesince}} </p>
                                     
                                             
-                                            <p> Neighborhood: {{post.hood.location }} </p>
+                                            <p> Neighborhood: {{post.hood.name }} </p>
                                             <p><a href="{%url 'profile' user.username %}">Posted by: {{user.username}}</a></p>
                                         </div>
                                     </div>

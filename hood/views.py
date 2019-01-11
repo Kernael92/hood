@@ -3,6 +3,7 @@ from .models import Profile,Business,Hood,Post
 from django.contrib.auth.models import User
 from .forms import NewPostForm,ProfileForm
 from django.contrib.auth.decorators import login_required
+from django.core.urlresolvers import reverse
 
 
 # Create your views here.
@@ -41,16 +42,17 @@ def profile(request,username):
     return render(request, 'hood/profile.html', context)
 
 @login_required
-def profile_setting(request,):
+def profile_setting(request):
     current_user = request.user 
    
     if request.method == 'POST':
-        form = ProfileForm(request.POST, request.FILES,instance=current_user.profile)
+        form = ProfileForm(request.POST, request.FILES,)
         if form.is_valid():
             profile = form.save(commit = False)
             profile.user = current_user
             profile.save
-        return redirect('index')
+            profile.user = current_user
+        return redirect(reverse('home'))
         
     else:
         form = ProfileForm()

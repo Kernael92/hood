@@ -37,6 +37,7 @@ class Profile(models.Model):
     email = models.EmailField()
     phone_number = models.CharField(max_length=10, blank=True)
     hood = models.ForeignKey(Hood, on_delete=models.CASCADE)
+    bio = models.TextField()
 
     def save_profile(self):
         self.save()
