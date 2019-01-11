@@ -44,12 +44,58 @@
     background-color: #444;
 }
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#container {
-    transition: margin-left .5s; /* If you want a transition effect */
-    padding: 20px;
-}
+
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
     .sidebar {padding-top: 15px;}
     .sidebar a {font-size: 18px;}
 }
+* {
+    box-sizing: border-box;
+}
+.column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+}
+/* Style the counter cards */
+.card {
+    box-shadow: 5px 5px 10px;
+    padding: 0px;
+    text-align: center;
+    
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -2px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+  
+  /* Hide the images by default */
+.image {
+    
+    width: 100vw;
+    height: 60vh;
+}
+  
+  /* Add a pointer when hovering over the thumbnail images */
+.cursor {
+    cursor: pointer;
+}
+  
