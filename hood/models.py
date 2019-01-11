@@ -72,6 +72,7 @@ class Post(models.Model):
     image = models.ImageField(upload_to='image')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     hood = models.ForeignKey(Hood, on_delete=models.CASCADE)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.title

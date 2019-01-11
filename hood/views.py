@@ -30,7 +30,7 @@ def new_post(request):
 def profile(request,username):
     user = User.objects.get(username=username)
     if not user:
-        return redirect('index')
+        return redirect('home')
     profile = Profile.objects.get(user=user)
     context = {
         'username':username,

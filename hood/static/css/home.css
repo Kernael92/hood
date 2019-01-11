@@ -185,6 +185,29 @@ h1 {
     font-weight: bolder;
     color: #79BEA8;
 }
+.picture-circle {
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
 
-
+}
+.column-66 {
+    float: left;
+    width: 66.66666%;
+    padding: 20px;
+}
   
+.column-33 {
+    float: left;
+    width: 33.33333%;
+    padding: 20px;
+}
+@media screen and (max-width: 1000px) {
+    .column-66,
+    .column-33 {
+        float: left;
+     
+    }
+    
+}
+ 

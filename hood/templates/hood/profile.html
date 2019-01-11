@@ -1,26 +1,27 @@
 {%extends 'hood/base.html'%}
-{% load bootstrap3%}
+{% load bootstrap4%}
 {% load static %}
 
 {%block content%}
 {{block.super}}
 <div class="profile">
     <div class="row">
-        <div class="col-sm-3 col-md-3 col-lg-3 left">
+        <div class="column-33">
             {%if profile.profile_pic%}
-            <img class="profile-circle" src="{{profile.profile_pic.url}}" alt="">
+            <img class="profile-circle" src="{{profile.profile_pic.url}}" alt="" style=" border-radius: 100%;width: 200px;height: 200px;">
             {%else%}
             <img class="profile-circle"src="{%static 'images/profile_placeholder.jpg'%}" style="width: 200px; height: 200px;">
             {%endif%}    
         </div>
-        <div class="col-sm-3 col-md-3 col-lg-3 right">
+        <div>
+
+        
+        <div class="column-66">
             <div class="name-buttons">
                 <h1 class="username">{{user.username}}</h1>
                 <h2 class="email">{{profile.email}}</h2>
                 {%if request.user == user%}
-                <!-- <a href="{%url 'profile_setting' %}">
-                <button class="profile_setting">Edit profile</button>
-                </a> -->
+                
                 {%endif%} 
 
             </div>
@@ -33,3 +34,4 @@
             </div>
             
         </div>
+        {%endblock%}
