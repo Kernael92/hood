@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import Profile,Business,Hood,Post
 from django.contrib.auth.models import User
-from .forms import NewPostForm,ProfileForm
+from .forms import NewPostForm,ProfileForm,NewBusinessForm
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 
@@ -65,6 +65,21 @@ def profile_setting(request):
 def business(request):
     business = Business.objects.all()
     return render(request,'hood/business.html', {'business':business})
+
+
+@login_required
+def new_business(request):
+    current_user = request.user 
+    if request.method == 'POST':
+        form = NewBusinessForm(request.POST, request.FILES,)
+        if form.is_valid():
+            business = form.save(commit = False)
+            business.user = current_user
+            business.save()
+        return redirect ('business')
+    else:
+        form = NewBusinessForm()
+    return render(request, 'new_business.html', {'form': form})
 
 
 
