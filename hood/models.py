@@ -47,10 +47,12 @@ class Profile(models.Model):
 
 
 class Business(models.Model):
+    name = models.CharField(max_length=200)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     hood = models.ForeignKey(Hood, on_delete=models.CASCADE)
     email = models.EmailField()
     phone_number = models.CharField(max_length=10,blank=True)
+    description = models.TextField()
 
     def __str__(self):
         return self.email
