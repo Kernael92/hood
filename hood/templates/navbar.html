@@ -24,6 +24,7 @@
             <a  href="{%url 'home'%}"><i class="fa fa-home {% if request.resolver_match.url_name == 'home' %}active{% endif %}" aria-hidden="true"></i></a>
             <a href="{%url 'profile' user.username %}"><i class="fa fa-user" aria-hidden="true"></i></a>
             <a href="{%url 'business'%}">View Business</a>
+            <a href="{%url 'new-business'%}">Post Business</a>
            
             
             <a href="/accounts/password/change">Change Password</a>
