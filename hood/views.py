@@ -61,6 +61,11 @@ def profile_setting(request):
     }
     return render(request, 'hood/profile_setting.html', context)
 
+@login_required
+def business(request):
+    business = Business.objects.all()
+    return render(request,'hood/business.html', {'business':business})
+
 
 
 
