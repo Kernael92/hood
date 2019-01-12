@@ -93,7 +93,7 @@
 .image {
     
     width: 100vw;
-    height: 60vh;
+    height: 80vh;
 }
   
   /* Add a pointer when hovering over the thumbnail images */
@@ -210,4 +210,5 @@ h1 {
     }
     
 }
+
  
