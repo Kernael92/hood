@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^setting/', views.profile_setting, name='profile_setting'),
     url(r'^business/',views.business, name='business'),
     url(r'^new/business$', views.new_business, name='new-business'),
+    url(r'^search/', views.search_results, name='search_results')
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

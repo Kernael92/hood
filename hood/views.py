@@ -66,7 +66,6 @@ def business(request):
     business = Business.objects.all()
     return render(request,'hood/business.html', {'business':business})
 
-
 @login_required
 def new_business(request):
     current_user = request.user 
@@ -81,6 +80,18 @@ def new_business(request):
         form = NewBusinessForm()
     return render(request, 'new_business.html', {'form': form})
 
+def search_results(request):
+    if 'post' in request.GET and request.GET['post']:
+        search_term = request.GET.get('post')
+        searched_posts = Post.search_by_hood(search_term)
+        message = f"{search_term}"
+
+        searched_posts = Post.search_by_hood(search_term)
+        return render(request, 'hood/search.html', {'message':message, 'posts':searched_posts})
+
+    else:
+        message = 'You have not searched for any term'
+        return render(request, 'hood/search.html', {'message':message})
 
 
 

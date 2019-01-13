@@ -87,6 +87,11 @@ class Post(models.Model):
     def delete_post(self):
         self.delete()
 
+    @classmethod
+    def search_by_hood(cls,search_term):
+        post = cls.objects.filter(hood__icontains=search_term)
+        return post
+
 
 
     
