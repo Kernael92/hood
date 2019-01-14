@@ -18,20 +18,42 @@
 <body>
 
   <div class="container">
+      <div class='row'>
+          <div class="column-33">
+            <div class="card border-secondary">
+                    <img class="card-img-top" id="myImg"  src="{{post.image.url}}" class="img-responsive" alt="" style='width:100%;'  data-toggle="modal" data-target="#myModal{{post.id}}"  >
+                    <div class="modal fade" id="myModal{{post.id}}" tabindex="-1" role="dialog" aria-labelledby="extra" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title" id="myModalLongTitle" style="font-size: 40px; font-family: cursive;font-weight: bolder; color:  #375F1B;">{{post.title}}</h1>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span   aria-hidden="true" >&times;</span>
+                                </button>
+                            </div>
+                        
+                            <div class="modal-body">
+                                <img id="myImg"class="card-img-top" class="img-responsive" src="{{post.image.url}}" style="width: 100%;"><br><br>
+                                <p>{{post.description}}</p>
+                                <p>Posted {{post.pub_date|timesince}} </p>
+                        
+                                
+                                <p> Neighborhood: {{post.hood.name }} </p>
+                                <p><a href="{%url 'profile' user.id%}">Posted by: {{user.username}}</a></p>
+                                <p><a href="{%url 'post' post.id%}">View comments</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div> 
+            </div>
      
-        <div class="card mb-3" style="width:40rem;">
-            <img class="card-img-top" src="{{post.post_image.url}}" alt="card image cap" size="100px200">
-        </div>
-        <div class="card-body">
-            <h1>{{post.title}}</h1>
-            <p>{{post.post_description}}</p>
-    
-        </div>
+        <div class="column-66">
         <div class="card boarder-secondary">
             <div class="card-header">
                 <h1>Comments</h1>
                 <div class="card-body text-primary">
-                    <h1>{{comment.post.title}}</h1>
+                    <h1>{{post.title}}</h1>
                     {%for comment in comments%}
                     <div>
                         <p>Comment by {{comment.user}}: {{comment.comment}}</p>
@@ -52,6 +74,7 @@
             </div>
     
         </div>
+    </div>
     
     </div>
    {% block scripts %}

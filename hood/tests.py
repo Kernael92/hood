@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Hood,Profile,Business
+from .models import Hood,Profile,Business,Comment,Post
 
 # Create your tests here.
 class HoodTestClass(TestCase):
@@ -17,3 +17,9 @@ class HoodTestClass(TestCase):
         hoods = Hood.objects.all()
         self.assertTrue(len(hoods) > 0)
     
+    #Testing delete method
+    def tearDown(self):
+        Hood.objects.all().delete()
+    
+
+
