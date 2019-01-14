@@ -77,7 +77,8 @@
                                     
                                             
                                             <p> Neighborhood: {{post.hood.name }} </p>
-                                            <p><a href="{%url 'profile' user.username %}">Posted by: {{user.username}}</a></p>
+                                            <p><a href="{%url 'profile' user.id%}">Posted by: {{user.username}}</a></p>
+                                            <p><a href="{%url 'post' post.id%}">View comments</a></p>
                                         </div>
                                     </div>
                                 </div>

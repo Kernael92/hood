@@ -1,4 +1,4 @@
-from .models import Post,Profile,Business,Hood
+from .models import Post,Profile,Business,Hood,Comment
 from django import forms
 from django.forms import ModelForm,Textarea, IntegerField
 
@@ -16,3 +16,8 @@ class NewBusinessForm(forms.ModelForm):
     class Meta:
         model = Business
         fields = ['name', 'image','description','hood','email']
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['comment']

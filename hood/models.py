@@ -92,6 +92,15 @@ class Post(models.Model):
         post = cls.objects.filter(hood__icontains=search_term)
         return post
 
+class Comment(models.Model):
+    Post = models.ForeignKey(Post,on_delete = models.CASCADE,related_name='comments')
+    comment = models.TextField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True,related_name='comments')
+
+
+    def __str__(self):
+        return self.comment
+
 
 
     

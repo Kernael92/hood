@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
-from .models import Profile,Business,Hood,Post
+from .models import Profile,Business,Hood,Post,Comment
 from django.contrib.auth.models import User
-from .forms import NewPostForm,ProfileForm,NewBusinessForm
+from .forms import NewPostForm,ProfileForm,NewBusinessForm,CommentForm
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 
@@ -93,5 +93,26 @@ def search_results(request):
         message = 'You have not searched for any term'
         return render(request, 'hood/search.html', {'message':message})
 
+
+def post(request,id):
+    post = Post.objects.get(pk = id)
+    current_user = request.user
+    comments = Comment.objects.all()
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.cleaned_data['comment']
+            comment.user = current_user
+    else:
+        form = CommentForm()
+
+    context = {
+        'id':id,
+        'post':post,
+        'comments':comments,
+        'form':form
+    }
+    return render(request, 'post.html', context)
 
 
