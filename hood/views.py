@@ -30,9 +30,10 @@ def new_post(request):
 
 def profile(request,username):
     user = User.objects.get(username=username)
-    if not user:
-        return redirect('home')
-    profile = Profile.objects.get(user=user)
+    if user:
+        profile=user
+        profile = Profile.objects.get(user=user)
+    
     context = {
         'username':username,
         'user': user,
@@ -46,16 +47,14 @@ def profile_setting(request):
     current_user = request.user 
    
     if request.method == 'POST':
-        form = ProfileForm(request.POST, request.FILES,)
+        user = Profile(user=current_user)
+        form = ProfileForm(request.POST, request.FILES,instance=user)
         if form.is_valid():
-            profile = form.save(commit = False)
-            profile.user = current_user
-            profile.save
-            profile.user = current_user
-        return redirect(reverse('home'))
+            form.save()
+            return redirect(reverse('home'))
         
     else:
-        form = ProfileForm()
+        form = ProfileForm(instance=current_user)
     context = {
         'form': form
     }

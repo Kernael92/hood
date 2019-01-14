@@ -95,7 +95,7 @@ class Post(models.Model):
 class Comment(models.Model):
     Post = models.ForeignKey(Post,on_delete = models.CASCADE,related_name='comments')
     comment = models.TextField()
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True,related_name='comments')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
 
     def __str__(self):
